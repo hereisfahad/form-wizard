@@ -85,7 +85,7 @@ class Map extends Component {
     const AsyncMap = withScriptjs(
       withGoogleMap(props => (
         <GoogleMap
-          defaultZoom={11}
+          defaultZoom={9}
           defaultCenter={{
             lat: this.state.mapPosition.lat,
             lng: this.state.mapPosition.lng

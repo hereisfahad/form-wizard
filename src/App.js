@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       forms: ["first", "second", "third"],
-      index: 0,
+      index: 1,
       firstName: "",
       lastName: "",
       password: "",
@@ -19,7 +19,6 @@ class App extends React.Component {
       gender: "",
       phone: "",
       country: "",
-      address: "",
       lat: "",
       lng: ""
     };
@@ -57,35 +56,37 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <div className="card"></div>
         <header>
           <button onClick={() => this.toggleForm(0)}>1</button>
           <button onClick={() => this.toggleForm(1)}>2</button>
           <button onClick={() => this.toggleForm(2)}>3</button>
         </header>
-        {this.state.forms[this.state.index] === "first" ? (
-          <FirstForm
-            fields={this.state}
-            inputChangeHandler={this.inputChangeHandler}
-          />
-        ) : this.state.forms[this.state.index] === "second" ? (
-          <SecondForm
-            fields={this.state}
-            inputChangeHandler={this.inputChangeHandler}
-          />
-        ) : this.state.forms[this.state.index] === "third" ? (
-          <ThirdForm
-            fields={this.state}
-            dragHandler={this.dragHandler}
-            lat={this.state.lat}
-            lng={this.state.lng}
-            handleSubmit={this.handleSubmit}
-          />
-        ) : (
-          ""
-        )}
-        <br />
+        <div id="centerForm">
+          {this.state.forms[this.state.index] === "first" ? (
+            <FirstForm
+              fields={this.state}
+              inputChangeHandler={this.inputChangeHandler}
+            />
+          ) : this.state.forms[this.state.index] === "second" ? (
+            <SecondForm
+              fields={this.state}
+              inputChangeHandler={this.inputChangeHandler}
+            />
+          ) : this.state.forms[this.state.index] === "third" ? (
+            <ThirdForm
+              fields={this.state}
+              dragHandler={this.dragHandler}
+              lat={this.state.lat}
+              lng={this.state.lng}
+              handleSubmit={this.handleSubmit}
+            />
+          ) : (
+            ""
+          )}
+        </div>
         <footer>
-          <button onClick={() => this.prev("back")}>Previous</button>
+          <button onClick={() => this.prev("back")}>Back</button>
           <button onClick={() => this.next("next")}>Next</button>
         </footer>
       </div>
