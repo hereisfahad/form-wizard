@@ -1,13 +1,9 @@
-input[type="radio"] {
-  margin: 0 15px;
-}
-
 #gender {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
-  color: #444;
   padding: 15px 22px;
-  min-width: 16vw;
+  margin: 7px 5px;
+  color: #444;
   box-sizing: border-box;
   border: 1px solid #aaa;
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
