@@ -15,7 +15,7 @@ const submitForm = (state, e) => {
   e.preventDefault();
 
   console.log(state);
-  fetch("https://formwizard.herokuapp.com/register"", {
+  fetch("https://formwizard.herokuapp.com/register", {
     method: "post",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
