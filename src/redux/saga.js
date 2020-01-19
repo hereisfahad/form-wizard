@@ -11,7 +11,7 @@ export function* apiCall(s) {
     yield console.log('api call')
     yield console.log(s.payload)//return state
     let d = {}
-    axios.post('https://apiformwizard.herokuapp.com/', s.payload)
+    axios.post('https://apiformwizard.herokuapp.com/register', s.payload)
     .then(res => {
         console.log(res)
         d = res.data;
