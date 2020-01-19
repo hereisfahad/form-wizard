@@ -11,7 +11,10 @@ const INITIAL_STATE = {
   phone: "",
   country: "",
   lat: 31.4716993,
-  lng: 74.2735069
+  lng: 74.2735069,
+  errors: {
+    firstName: ""
+  }
 };
 
 const formReducer = (state = INITIAL_STATE, action) => {
