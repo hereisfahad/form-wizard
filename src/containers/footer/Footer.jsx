@@ -16,23 +16,21 @@ function Footer() {
   return (
     <div>
       <footer>
-        <button onClick={() => dispatch(prevForm())}>Back</button>
-        <button onClick={() => dispatch(nextForm())}>Next</button>
-        <form
-          onSubmit={e => dispatch(formSubmitHandler(e))}
+        <div className="buttons">
+        <button onClick={() => dispatch(prevForm())} className="buttons-left">Back</button>
+        <button onClick={() => dispatch(nextForm())} className="buttons-right">Next</button>
+        </div>
+        
+        <button
+          type="submit"
+          value="Submit"
           style={{
-            maxWidth: "38vw"
+            padding: "10px 15px"
           }}
+          disabled={disableState(state.errors)}
+          onClick={() => formSubmitHandler()}
         >
-          <button
-            type="submit"
-            value="Submit"
-            style={{
-              padding: "10px 15px"
-            }}
-            disabled={disableState(state.errors)}
-          >
-            Save
+          Save
           </button>
         </form>
       </footer>
