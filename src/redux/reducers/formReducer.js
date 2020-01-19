@@ -13,7 +13,6 @@ const INITIAL_STATE = {
   lat: 31.4716993,
   lng: 74.2735069,
   errors: {
-    firstName: "",
     gender:"Invalid Gender",
     email:"Invalid Email",
     phone:"Invalid Phone",
