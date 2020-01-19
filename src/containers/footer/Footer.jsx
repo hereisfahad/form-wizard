@@ -32,7 +32,6 @@ function Footer() {
         >
           Save
           </button>
-        </form>
       </footer>
     </div>
   );
