@@ -55,11 +55,11 @@ const submitForm = (state, e) => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      // alert(data);
+      alert(data);
     })
     .catch(err => {
       console.log(err);
-      // alert("could'nt register use");
+      alert("could'nt register use");
     });
 };
 export { dec, inc, inputChangeHandler, submitForm };
