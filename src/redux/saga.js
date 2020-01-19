@@ -14,19 +14,20 @@ export function* apiCall() {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                user: { user: "user" }
+                user: state
             })
         }
         );
 
         data = yield response.json();
+        yield put({ type: "USER_SAVED", data });
     }
     catch (error) {
         console.log(error)
         return;
     }
 
-    yield put({ type: "USER_SAVED", data });
+   
 }
 export function* rootSaga() {
     yield all(
