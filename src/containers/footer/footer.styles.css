@@ -1,9 +1,19 @@
 footer {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
-footer button {
+.buttons {
+  align-content: space-between;
+  margin-bottom: 1rem;
+}
+.buttons-right{
   padding: 10px 15px;
+  margin-left: 2rem;
+}
+.buttons-left{
+  padding: 10px 15px;
+  margin-right: 2rem;
 }
 footer button:disabled{
   color: rgb(227, 232, 236);
