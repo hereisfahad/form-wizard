@@ -7,7 +7,7 @@ const inc = index => {
   else return ++index;
 };
 const inputChangeHandler = (state, target) => {
-  const { value, name } = target;
+  let { value, name } = target;
   state[name] = value;
  name = name === "cPassword" ? "password" : name;
   state.errors[name] = validateField(state, { name, value })
