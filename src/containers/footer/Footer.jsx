@@ -17,8 +17,8 @@ function Footer() {
     <div>
       <footer>
         <div className="buttons">
-        <button onClick={() => dispatch(prevForm())} className="buttons-left">Back</button>
-        <button onClick={() => dispatch(nextForm())} className="buttons-right">Next</button>
+        <button onClick={() => dispatch(prevForm())} className="buttons-back">Back</button>
+        <button onClick={() => dispatch(nextForm())} className="buttons-next">Next</button>
         </div>
         
         <button
