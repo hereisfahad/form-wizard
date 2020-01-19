@@ -7,13 +7,13 @@ footer {
   align-content: space-between;
   margin-bottom: 1rem;
 }
-.buttons-right{
-  padding: 10px 15px;
-  margin-left: 2rem;
-}
-.buttons-left{
+.buttons-back{
   padding: 10px 15px;
   margin-right: 2rem;
+}
+.buttons-next{
+  padding: 10px 15px;
+  margin-left: 2rem;
 }
 footer button:disabled{
   color: rgb(227, 232, 236);
