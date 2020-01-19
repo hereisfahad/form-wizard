@@ -5,7 +5,7 @@ export function* actionWatcher() {
 }
 const state = select();
 // 
-export function* apiCall() {
+export function* apiCall(s) {
     yield console.log('api call')
     // yield console.log(state)
     const data = ""
@@ -14,7 +14,7 @@ export function* apiCall() {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                user: state
+                user: s.payload
             })
         }
         );
