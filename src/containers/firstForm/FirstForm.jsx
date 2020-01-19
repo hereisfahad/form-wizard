@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { inputChangeHandler } from "../../redux/actions/formAction";
 export default function FirstForm(props) {
   const dispatch = useDispatch();
-  const { firstName, lastName, password, cPassword } = useSelector(
+  const { firstName, lastName, password, cPassword, errors } = useSelector(
     state => state.formReducer
   );
   return (
@@ -14,10 +14,13 @@ export default function FirstForm(props) {
         name="firstName"
         id="firstName"
         onChange={e => dispatch(inputChangeHandler(e))}
+        onBlur={(e) => dispatch(inputChangeHandler(e))}
         value={firstName}
         placeholder="First Name"
         autoFocus
       />
+      <span className="error">{errors.firstName}</span>
+
 
       <input
         type="text"
@@ -25,8 +28,10 @@ export default function FirstForm(props) {
         id="lastName"
         placeholder="Last Name"
         onChange={e => dispatch(inputChangeHandler(e))}
+        onBlur={(e) => dispatch(inputChangeHandler(e))}
         value={lastName}
       />
+      <span className="error">{errors.lsatName}</span>
 
       <input
         type="password"
@@ -34,8 +39,10 @@ export default function FirstForm(props) {
         id="password"
         placeholder="Password"
         onChange={e => dispatch(inputChangeHandler(e))}
+        onBlur={(e) => dispatch(inputChangeHandler(e))}
         value={password}
       />
+      
 
       <input
         type="password"
@@ -43,8 +50,10 @@ export default function FirstForm(props) {
         id="cPassword"
         placeholder="Confirm Password"
         onChange={e => dispatch(inputChangeHandler(e))}
+        onBlur={(e) => dispatch(inputChangeHandler(e))}
         value={cPassword}
       />
+      <span className="error">{errors.password && errors.cPassword}</span>
     </>
   );
 }
