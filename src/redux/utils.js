@@ -40,7 +40,7 @@ const validateField = (state, target) => {
 }
 // Todo: why redux-saga? why thunk? why batch
 const submitForm = (state, e) => {
-  e.preventDefault();
+//   e.preventDefault();
 
   console.log(state);
   fetch("https://apiformwizard.herokuapp.com/register", {
