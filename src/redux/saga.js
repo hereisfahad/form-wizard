@@ -7,27 +7,20 @@ const state = select();
 // 
 export function* apiCall(s) {
     yield console.log('api call')
-    // yield console.log(state)
-    
-    try {
-        let response = yield fetch("https://apiformwizard.herokuapp.com/register", {
-            method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                user: s.payload
-            })
-        }
-        );
+    yield console.log(s.payload)//return state
+    let d = {}
+    let abc = axios.post('https://apiformwizard.herokuapp.com/', s.payload)
+    abc.then(res => {
+        console.log(res)
+        d = res.data;
 
-       let data = yield response.json();
-        yield put({ type: "USER_SAVED", data });
     }
-    catch (error) {
-        console.log(error)
-        return;
-    }
+    )
+        .catch((error) => {
+            console.log(error);
+        })
+    yield put({ type: "USER_SAVED", d });
 
-   
 }
 export function* rootSaga() {
     yield all(
