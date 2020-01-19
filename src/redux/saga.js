@@ -1,4 +1,6 @@
 import { select, put, takeLatest, all } from 'redux-saga/effects';
+import axios from 'axios';
+
 export function* actionWatcher() {
     yield console.log('Hello Sagas!')
     yield takeLatest("FORM_SUBMITED", apiCall)
