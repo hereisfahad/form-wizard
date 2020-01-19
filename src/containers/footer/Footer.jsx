@@ -28,7 +28,7 @@ function Footer() {
             padding: "10px 15px"
           }}
           disabled={disableState(state.errors)}
-          onClick={() => formSubmitHandler()}
+          onClick={() => dispatch(formSubmitHandler(state))}
         >
           Save
           </button>
