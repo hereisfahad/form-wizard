@@ -8,8 +8,8 @@ const inc = index => {
 };
 const inputChangeHandler = (state, target) => {
   const { value, name } = target;
-  state[name] = value;
-  state.errors[name] = validateField(state, target)
+ name = name === "cPassword" ? "password" : name;
+  state.errors[name] = validateField(state, { name, value })
 };
 const validEmailRegex = RegExp(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
 
@@ -24,9 +24,6 @@ const validateField = (state, target) => {
     case "password":
       console.log('password changing')
       return state.password === state.cPassword ? "" : "Password Does'nt Match";
-    case "cPassword":
-      console.log('password changing')
-      return state.password === state.cPassword ? "" : "Password does'nt Match";
     case "gender":
       return value !== "" ? "" : "Invalid Gender";
     case "email":
