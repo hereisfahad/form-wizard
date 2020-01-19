@@ -5,3 +5,9 @@ footer {
 footer button {
   padding: 10px 15px;
 }
+footer button:disabled{
+  color: rgb(227, 232, 236);
+  background-color: rgb(187, 181, 181);
+  cursor: auto;
+  box-shadow: none;
+}
