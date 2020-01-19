@@ -53,7 +53,7 @@ const formReducer = (state = INITIAL_STATE, action) => {
     case "FORM_SUBMITED":
       return {
         ...state,
-        saved: submitForm(state, action.payload)
+//         saved: submitForm(state, action.payload)
       };
 
     default:
