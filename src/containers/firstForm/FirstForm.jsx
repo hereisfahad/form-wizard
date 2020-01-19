@@ -53,7 +53,7 @@ export default function FirstForm(props) {
         onBlur={(e) => dispatch(inputChangeHandler(e))}
         value={cPassword}
       />
-      <span className="error">{errors.password && errors.cPassword}</span>
+      <span className="error">{errors.password}</span>
     </>
   );
 }
