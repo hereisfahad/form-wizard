@@ -8,7 +8,6 @@ import "./footer.styles.css";
 function Footer() {
   const state = useSelector(state => state.formReducer)
   const disableState = (errors) => {
-    console.log(errors)
     const values = Object.values(errors)
     return values.some(value => value.length !== 0)
   }

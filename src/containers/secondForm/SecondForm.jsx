@@ -33,7 +33,8 @@ export default function SecondForm(props) {
       />
        <span className="error">{errors.email}</span>
       <input
-        type="text"
+        type="number"
+        min="0"
         name="phone"
         id="phone"
         placeholder="Phone"

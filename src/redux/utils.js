@@ -16,15 +16,14 @@ const validEmailRegex = RegExp(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
 
 const validateField = (state, target) => {
   const { value, name } = target;
-  console.log(value, name)
   switch (name) {
     case "firstName":
       return value.length > 0 ? "" : "Invalid First Name"
     case "lastName":
       return value.length > 0 ? "" : "Invalid Last Name"
     case "password":
-      console.log('password changing')
-      return state.password === state.cPassword ? "" : "Password Does'nt Match";
+      return (state.password === state.cPassword ? "" : "Password Doesn't Match") ||
+       (state.password.length > 0 ? "" : "Password Can't Be Blank")
     case "gender":
       return value !== "" ? "" : "Invalid Gender";
     case "email":
@@ -38,26 +37,5 @@ const validateField = (state, target) => {
   }
 
 }
-// Todo: why redux-saga? why thunk? why batch
-const submitForm = (state, e) => {
-//   e.preventDefault();
 
-  console.log(state);
-  fetch("https://apiformwizard.herokuapp.com/register", {
-    method: "post",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      use: state
-    })
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      alert(data);
-    })
-    .catch(err => {
-      console.log(err);
-      alert("could'nt register use");
-    });
-};
-export { dec, inc, inputChangeHandler, submitForm };
+export { dec, inc, inputChangeHandler };

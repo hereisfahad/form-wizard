@@ -1,4 +1,4 @@
-import { dec, inc, inputChangeHandler, submitForm } from "../utils";
+import { dec, inc, inputChangeHandler } from "../utils";
 const INITIAL_STATE = {
   forms: ["first", "second", "third"],
   index: 0,
@@ -41,19 +41,16 @@ const formReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         input: inputChangeHandler(state, action.payload)
-        // action.payload.name: action.payload.value
       };
     case "MARKER_DRAGGED":
       return {
         ...state,
         lat: action.payload.lat,
         lng: action.payload.lng
-        // action.payload.name: action.payload.value
       };
     case "FORM_SUBMITED":
       return {
         ...state,
-//         saved: submitForm(state, action.payload)
       };
 
     default:
