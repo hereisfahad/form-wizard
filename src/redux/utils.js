@@ -35,7 +35,6 @@ const validateField = (state, target) => {
     default:
       return state;
   }
-
 }
 
 export { dec, inc, inputChangeHandler };
