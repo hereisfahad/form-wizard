@@ -5,7 +5,7 @@ State management with redux. This project was bootstrapped with [Create React Ap
 
 ## Getting Started
 
-Clone or donwload the project and running on your local machine for development and testing purposes by running these commands.
+Clone or download the project and running on your local machine for development and testing purposes by running these commands.
 ### `npm install`
 
 ### `npm run start`

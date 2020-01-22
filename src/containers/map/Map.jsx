@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { dragHandler } from "../../redux/actions/formAction";
 import {
@@ -14,7 +14,13 @@ Geocode.enableDebug();
 
 export default function Map(props) {
   const dispatch = useDispatch();
-  const { lat, lng } = useSelector(state => state.formReducer);
+  // const { lat, lng } = useSelector(state => state.formReducer);
+  useEffect(()=>{
+    setLocalLat(localLAT=props.lat)
+    setLocalLng(localLNG=props.lng)
+  },[])
+  let [localLAT,setLocalLat] = useState('31.4716993');
+  let [localLNG,setLocalLng] = useState('74.2735069');
 
   const onMarkerDragEnd = e => {
     let lat = e.latLng.lat();
@@ -28,16 +34,16 @@ export default function Map(props) {
       <GoogleMap
         defaultZoom={14}
         defaultCenter={{
-          lat,
-          lng
+          lat:props.lat,
+          lng:props.lng
         }}
       >
         <Marker
           draggable={true}
           onDragEnd={onMarkerDragEnd}
           position={{
-            lat: lat || 31.4716993,
-            lng: lng || 74.2735069
+            lat: props.lat || 31.4716993,
+            lng: props.lng || 74.2735069
           }}
         />
         <Marker />
@@ -50,6 +56,8 @@ export default function Map(props) {
       loadingElement={<div style={{ height: `100%` }} />}
       containerElement={<div style={{ height: "200px", width: "290px" }} />}
       mapElement={<div style={{ height: `100%` }} />}
+      lat={localLAT} 
+      lng={localLNG}
     />
   );
 }
