@@ -9,7 +9,7 @@ import {
 } from "react-google-maps";
 import Geocode from "react-geocode";
 
-Geocode.setApiKey("AIzaSyA2n7hH6W6cHvZdRX2kBmL0b21ev6WWjag");
+Geocode.setApiKey(process.env.REACT_APP_API_KEY);
 Geocode.enableDebug();
 
 export default function Map(props) {
